@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, shrink-to-fit=0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  <title>effulgence.io</title>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    canvas {
+      display: block;
+      height: 100%;
+      width: 100%;
+    }
+
+    .vertex-marker {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      top: 0;
+      left: 0;
+      margin-top: -6px;
+      margin-left: -6px;
+      transition: opacity .35s cubic-bezier(.175, .885, .32, 1.275);
+      opacity: 0;
+      pointer-events: none;
+      user-select: none;
+      will-change: opacity;
+    }
+
+    .vertex-marker.visible {
+      opacity: 1;
+      pointer-events: initial;
+    }
+
+    .icosahedron {
+      will-change: opacity, transform;
+      /* transform: scale(.5); */
+      /* opacity: 0; */
+      transition: transform 1s cubic-bezier(.165, .84, .44, 1), opacity .5s cubic-bezier(.165, .84, .44, 1);
+    }
+
+    .icosahedron.visible {
+      transform: none;
+      opacity: 1;
+    }
+
+    .label {
+      background-color: hsla(0, 0%, 100%, .5);
+      box-shadow: 0 15px 35px rgba(23, 55, 87, .1), 0 5px 15px rgba(0, 0, 0, .07);
+      color: #895cf2;
+      cursor: pointer;
+      font-size: 15px;
+      font-family: Camphor, Helvetica Neue;
+      font-weight: 500;
+      padding: 5px 10px;
+      position: relative;
+      text-align: center;
+      transform-origin: 50% 50%;
+      transition: background-color 2s ease-in-out, color 2s ease-in-out;
+      white-space: nowrap;
+      will-change: transform;
+      z-index: 999;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="icosahedron" />
+  <script src="bundle.js"></script>
+</body>
+
+</html>

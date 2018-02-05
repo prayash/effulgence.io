@@ -1,0 +1,27 @@
+{
+  "globals": {
+    "Promise": true,
+    "expect": true
+  },
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true,
+    "node": true
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 7,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "jsx": true
+    }
+  },
+  "extends": ["eslint:recommended"],
+  "rules": {
+    "semi": [0, "never"],
+    "no-console": 0,
+    "no-debugger": 0
+  }
+}
