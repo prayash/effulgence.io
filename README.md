@@ -1,3 +1,3 @@
-# http://prayash.io
+# http://effulgence.io
 
-## Just a small three.js app. 🤓
+🤓

@@ -1,11 +1,12 @@
 import * as THREE from 'three'
 
-class Lights {
-  constructor() {
+class Lights extends THREE.Object3D {
+  constructor(context) {
+    super(context)
+
     this.items = []
     this.rgbaParent = new THREE.Color()
     this.rgbaLayer = new THREE.Color(0x0000ff)
-    this.object3D = new THREE.Object3D()
 
     let range = 750
     let codeSegments = [
@@ -26,7 +27,7 @@ class Lights {
       })
 
       obj.position.set(segment.x, segment.y, segment.z)
-      this.object3D.add(obj)
+      this.add(obj)
       this.items.push(obj)
     })
   }

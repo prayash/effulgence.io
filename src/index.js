@@ -26,10 +26,10 @@ const { composer, renderer, camera, canvas, scene, updateControls } = app()
 // })
 
 let orb = new Orb()
-scene.add(orb.object3D)
+scene.add(orb)
 
 let lights = new Lights()
-scene.add(lights.object3D)
+scene.add(lights)
 
 let time = 0
 animate(dt => {
@@ -38,8 +38,8 @@ animate(dt => {
   // core.render()
   // coreFrame.render()
 
-  // renderer.render(scene, camera)
-  composer.render()
+  renderer.render(scene, camera)
+  // composer.render()
 
   camera.lookAt(scene.position)
 

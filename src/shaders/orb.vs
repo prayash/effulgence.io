@@ -192,9 +192,9 @@ float turbulence(vec3 p) {
 }
 
 void main() {
-	float t = time * 0.1;
-    float b = 300.0 * pnoise(0.05 * position + vec3(2.0 * t), vec3( 100.0 ));
+	float t = time * .1;
     noise = 30.0 *  -0.10 * turbulence(200.0 * normal + t);
+    float b = 30.0 * pnoise(0.05 * position + vec3(2.0 * t), vec3(100.0));
     float displacement = -noise + b;
     
     vec3 newPosition = position + normal * displacement;
